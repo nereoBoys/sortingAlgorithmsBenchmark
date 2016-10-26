@@ -16,10 +16,17 @@ import Structures.SimpleList;
 public class InsertionSort {
     SimpleList<Integer> list;
     
-    
     public InsertionSort(SimpleList<Integer> pDato){
-        
         list=pDato;
+        _InsertionSort();
+    }
+    
+    /**
+     * Metodo encargado de ordenar la lista mediante InsertionSort
+     * @return un lista simple ordenada
+     */
+    public SimpleList<Integer> _InsertionSort(){
+        
         GenericNode<Integer> tmp=list.getHead();
         GenericNode<Integer> tmp2=list.getHead();
         GenericNode<Integer> tmp3=list.getHead();
@@ -95,9 +102,12 @@ public class InsertionSort {
                 }
             }
         }
-    
+        return list;
     }
     
+    /**
+     * Metodo que muestra como se encuentra conformada la lista
+     */
      public void print() {
 		GenericNode<Integer> tmp = list.returnNode(0);
 		while (tmp != null){

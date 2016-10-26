@@ -19,8 +19,16 @@ public class RadixSort {
     SimpleList<Integer> list;
     
     public RadixSort(SimpleList<Integer> pDato){
-    
         list=pDato;
+        _RadixSort();
+    }
+    
+    /**
+     * Metodo encargado de ordenar la lista mediante RadixSort
+     * @return un lista simple ordenada
+     */
+    public SimpleList<Integer>_RadixSort(){
+    
         GenericNode<Integer> tmp=list.getHead();
         GenericNode<Integer> tmp2=list.getHead();
         GenericNode<Integer> tmp3=list.getHead();
@@ -168,14 +176,18 @@ public class RadixSort {
                         else{
                             cont2+=1;
                         }
-        }
+                }
         
+             }
+        }
+    
+    return list;
     }
-}
     
-    
-    }
-    
+    /**
+     * Metodo que retorna el mayor numero de una lista simple
+     * @return int mayor elemento de la lista simple
+     */
     public int Max(){
         int max=0;
         for(int i=0;i<list.size();i++){
@@ -187,7 +199,12 @@ public class RadixSort {
         return max;
     }
     
-    
+    /**
+     * Metodo que retorna un numero que representa el exponente a partir del cual
+     * se comienza a dividir los numero de la lista simple
+     * @param pDato
+     * @return 
+     */
     public int Exp(int pDato){
         int res=0;
         int num=pDato;
@@ -197,6 +214,10 @@ public class RadixSort {
         }
         return res;
     }
+    
+    /**
+     * Metodo que muestra como se encuentra conformada la lista
+     */
     
      public void print() {
 		GenericNode<Integer> tmp = list.returnNode(0);

@@ -13,13 +13,21 @@ package sortingalgorithmsbenchmark;
 import Structures.GenericNode;
 import Structures.SimpleList;
 
-public class BubbleSort {
+public class BubbleSort<T> {
     
     private SimpleList<Integer> list;
     
     public BubbleSort(SimpleList<Integer> pDato){
-    
         list=pDato;
+        _BubbleSort();
+    }
+    
+    /**
+     * Metodo encargado de ordenar la lista mediante BubbleSort
+     * @return un lista simple ordenada
+     */
+    public SimpleList<Integer> _BubbleSort(){
+    
         boolean estado=true;
         int cont=0;
         GenericNode<Integer> tmp=new GenericNode<>(0);
@@ -80,8 +88,12 @@ public class BubbleSort {
             }
         }
     }
+        return list;
     }
     
+    /**
+     * Metodo que muestra como se encuentra conformada la lista
+     */
     public void print() {
 		GenericNode<Integer> tmp = list.returnNode(0);
 		while (tmp != null){

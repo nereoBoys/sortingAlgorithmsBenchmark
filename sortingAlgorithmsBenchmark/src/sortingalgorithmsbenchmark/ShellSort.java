@@ -18,8 +18,16 @@ public class ShellSort {
     SimpleList<Integer> list;
     
     public ShellSort(SimpleList<Integer> pDato){
-        
         list=pDato;
+        _ShellSort();
+    }
+    
+    /**
+     * Metodo encargado de ordenar la lista mediante ShellSort
+     * @return un lista simple ordenada
+     */
+    public SimpleList<Integer>_ShellSort(){
+        
         GenericNode<Integer> tmp=list.getHead();
         GenericNode<Integer> tmp2=list.getHead();
         GenericNode<Integer> tmp3=list.getHead();
@@ -135,13 +143,16 @@ public class ShellSort {
                         else{
                             cont+=1;
                         }
-        }
+                }
         
-    }
-}
+            }
+        }
+        return list;
         }
     
-    
+    /**
+     * Metodo que muestra como se encuentra conformada la lista
+     */
     public void print() {
 		GenericNode<Integer> tmp = list.returnNode(0);
 		while (tmp != null){
