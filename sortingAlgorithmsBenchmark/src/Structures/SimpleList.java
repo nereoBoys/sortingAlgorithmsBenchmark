@@ -147,13 +147,14 @@ public class SimpleList<T extends Comparable> implements GenericList<T> {
          * @param pDato
          * @return res
          */
-        public int find_pos(GenericNode<T> pDato){
+        public int find_pos(T pDato){
             int res=0;
             GenericNode<T> tmp=_head;
             while(tmp!=null){
-                if(tmp.getData()==pDato.getData()){
+                if(tmp.getData()==pDato){
                     return res;
                 }else{
+                    tmp=tmp.getNext();
                     res+=1;
                 }
             }
