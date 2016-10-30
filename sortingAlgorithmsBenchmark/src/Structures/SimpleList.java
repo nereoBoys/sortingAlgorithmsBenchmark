@@ -9,7 +9,7 @@ package Structures;
  *
  * @author enrique
  */
-public class SimpleList<T> implements GenericList<T> {
+public class SimpleList<T extends Comparable> implements GenericList<T> {
      private GenericNode<T> _head;
 
 	public SimpleList(){
@@ -141,6 +141,39 @@ public class SimpleList<T> implements GenericList<T> {
 		}
 		return null;
 	}
+        
+        /**
+         * Metodo que dado un nodo, indica en que posicion en la lista esta dicho nodo
+         * @param pDato
+         * @return res
+         */
+        public int find_pos(GenericNode<T> pDato){
+            int res=0;
+            GenericNode<T> tmp=_head;
+            while(tmp!=null){
+                if(tmp.getData()==pDato.getData()){
+                    return res;
+                }else{
+                    res+=1;
+                }
+            }
+            return 9999;
+        }
+        /**
+         * Metodo que indica si la lista esta ordenada de forma ascendente
+         * @return 
+         */
+        public boolean inOrder(){
+            GenericNode<T> tmp=_head;
+            while(tmp.getNext()!=null){
+                if(tmp.getData().compareTo(tmp.getNext().getData())==-1){
+                    tmp=tmp.getNext();
+                }else{
+                    return false;
+                }
+            }
+            return true;
+        }
 
 	/**
 	 * 

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package progra2;
+package sortingalgorithmsbenchmark;
 
 /**
  *
@@ -15,8 +15,9 @@ import sortingalgorithmsbenchmark.BubbleSort;
 import sortingalgorithmsbenchmark.ShellSort;
 import sortingalgorithmsbenchmark.InsertionSort;
 import sortingalgorithmsbenchmark.RadixSort;
+import sortingalgorithmsbenchmark.QuickSort;
 
-public class SortingAlgorithmsBenchmark {
+public class Main {
 
     /**
      * @param args the command line arguments
@@ -24,21 +25,22 @@ public class SortingAlgorithmsBenchmark {
     public static void main(String[] args) {
         SimpleList<Integer> l=new SimpleList<>();
        
-        l.insert(552174, 0);
+        l.insert(552174,0);
         l.insert(35, 1);
-        l.insert(190, 2);
-        l.insert(1, 3);
-        l.insert(2, 4);
+        l.insert(37, 2);
+        l.insert(190, 3);
+        /*l.insert(1, 3);
+        l.insert(8, 4);
         l.insert(3, 5);
         l.insert(14, 6);
         l.insert(500, 7);
-        l.insert(3, 8);
+        l.insert(424, 8);
         l.insert(6, 9);
         l.insert(78, 10);
         l.insert(42, 11);
         l.insert(0, 12);
-        l.insert(456, 13);
-
+        l.insert(456, 12);
+*/
        
     /*   l.insert(7, 0);
        l.insert(1024, 1);
@@ -54,12 +56,14 @@ public class SortingAlgorithmsBenchmark {
        
        
         l.print();
-       BubbleSort b=new BubbleSort(l);
+        BubbleSort b=new BubbleSort(l);
         InsertionSort in=new InsertionSort(l);
         ShellSort sh=new ShellSort(l);
         RadixSort r=new RadixSort(l);
         
-        System.out.println("BubbleSort");
+        //QuickSort q=new QuickSort(l);
+        
+       System.out.println("BubbleSort");
         b.print();
         System.out.println("InsertionSort");
         in.print();
@@ -67,9 +71,10 @@ public class SortingAlgorithmsBenchmark {
         sh.print();
         System.out.println("RadixSort");
         r.print();
+       // System.out.println("QuickSort");
+       // q.print();
+
     }
     
 }
-
-    
 
