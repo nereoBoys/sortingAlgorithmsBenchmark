@@ -13,11 +13,11 @@ package sortingalgorithmsbenchmark;
 import Structures.GenericNode;
 import Structures.SimpleList;
 
-public class BubbleSort<T> {
+public class BubbleSort<T extends Comparable> {
     
-    private SimpleList<Integer> list;
+    private SimpleList<T> list;
     
-    public BubbleSort(SimpleList<Integer> pDato){
+    public BubbleSort(SimpleList<T> pDato){
         list=pDato;
         _BubbleSort();
     }
@@ -26,11 +26,11 @@ public class BubbleSort<T> {
      * Metodo encargado de ordenar la lista mediante BubbleSort
      * @return un lista simple ordenada
      */
-    public SimpleList<Integer> _BubbleSort(){
+    public SimpleList<T> _BubbleSort(){
     
         boolean estado=true;
         int cont=0;
-        GenericNode<Integer> tmp=new GenericNode<>(0);
+        GenericNode<T> tmp;
         
         while(true){
             if(cont==list.size()-1){
@@ -44,7 +44,7 @@ public class BubbleSort<T> {
                 if(cont==0){
                     //System.out.println("EEEEE");
                     //System.out.println(cont);
-                    if(list.returnNode(cont).getData()>list.returnNode(cont+1).getData()){
+                    if(list.returnNode(cont).getData().compareTo(list.returnNode(cont+1).getData())==-1){
                         /*System.out.println("QQQQQ");
                         System.out.println(list.returnNode(cont).getData());
                         System.out.println(list.returnNode(cont+1).getData());
@@ -66,7 +66,7 @@ public class BubbleSort<T> {
                     }
                 }
                 else {
-                   if(list.returnNode(cont).getData()>list.returnNode(cont+1).getData()){
+                   if(list.returnNode(cont).getData().compareTo(list.returnNode(cont+1).getData())==-1){
                         //System.out.println("SSS");
                         //list.print();
                         //System.out.println("SSS");
@@ -95,7 +95,7 @@ public class BubbleSort<T> {
      * Metodo que muestra como se encuentra conformada la lista
      */
     public void print() {
-		GenericNode<Integer> tmp = list.returnNode(0);
+		GenericNode<T> tmp = list.returnNode(0);
 		while (tmp != null){
 			System.out.println(tmp.getData());
 			//System.out.println(tmp.get_Dato());

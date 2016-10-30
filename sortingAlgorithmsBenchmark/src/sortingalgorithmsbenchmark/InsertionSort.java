@@ -13,10 +13,10 @@ package sortingalgorithmsbenchmark;
 import Structures.GenericNode;
 import Structures.SimpleList;
 
-public class InsertionSort {
-    SimpleList<Integer> list;
+public class InsertionSort <T extends Comparable>{
+    SimpleList<T> list;
     
-    public InsertionSort(SimpleList<Integer> pDato){
+    public InsertionSort(SimpleList<T> pDato){
         list=pDato;
         _InsertionSort();
     }
@@ -25,17 +25,18 @@ public class InsertionSort {
      * Metodo encargado de ordenar la lista mediante InsertionSort
      * @return un lista simple ordenada
      */
-    public SimpleList<Integer> _InsertionSort(){
+    public SimpleList<T> _InsertionSort(){
         
-        GenericNode<Integer> tmp=list.getHead();
-        GenericNode<Integer> tmp2=list.getHead();
-        GenericNode<Integer> tmp3=list.getHead();
-        GenericNode<Integer> tmp4=list.getHead();
+        GenericNode<T> tmp=list.getHead();
+        GenericNode<T> tmp2=list.getHead();
+        GenericNode<T> tmp3=list.getHead();
+        GenericNode<T> tmp4=list.getHead();
 
         //System.out.println(list.size());
         for(int i=1;i<list.size();i++){
             if (i==1){
-                if(list.returnNode(i-1).getData()>list.returnNode(i).getData()){
+                //>
+                if(list.returnNode(i-1).getData().compareTo(list.returnNode(i).getData())==-1){
                         /*System.out.println("QQQQQ");
                         System.out.println(list.returnNode(i).getData());
                         System.out.println(list.returnNode(i+1).getData());
@@ -57,7 +58,7 @@ public class InsertionSort {
                         System.out.println(i);
                         System.out.println(j);
 */
-                        if(list.returnNode(j).getData()>list.returnNode(i).getData()&& i-j==2){
+                        if(list.returnNode(j).getData().compareTo(list.returnNode(i).getData())==-1 && i-j==2){
                             tmp=list.returnNode(i);
                             tmp2=list.returnNode(i-1);
                             tmp3=list.returnNode(j);
@@ -66,7 +67,7 @@ public class InsertionSort {
                             tmp2.setNext(tmp3);
                             list.setHead(tmp);
                     }
-                        else if(list.returnNode(j).getData()>list.returnNode(i).getData()&& i-j>2){
+                        else if(list.returnNode(j).getData().compareTo(list.returnNode(i).getData())==-1 && i-j>2){
                             tmp=list.returnNode(i);
                             tmp2=list.returnNode(i-1);
                             tmp3=list.returnNode(j);
@@ -78,7 +79,7 @@ public class InsertionSort {
                             
                         }
                     }else{
-                        if(list.returnNode(j).getData()>list.returnNode(i).getData()&& i-j==1 ){
+                        if(list.returnNode(j).getData().compareTo(list.returnNode(i).getData())==-1 && i-j==1 ){
                             tmp=list.returnNode(i);
                             tmp2=list.returnNode(j);
                             tmp3=list.returnNode(j-1);
@@ -86,7 +87,7 @@ public class InsertionSort {
                             tmp3.setNext(tmp);
                             tmp.setNext(tmp2);
                             
-                        }else if(list.returnNode(j).getData()>list.returnNode(i).getData()&& i-j>=2 ){
+                        }else if(list.returnNode(j).getData().compareTo(list.returnNode(i).getData())==-1 && i-j>=2 ){
                             tmp=list.returnNode(i);
                             tmp2=list.returnNode(i-1);
                             tmp3=list.returnNode(j);
@@ -109,7 +110,7 @@ public class InsertionSort {
      * Metodo que muestra como se encuentra conformada la lista
      */
      public void print() {
-		GenericNode<Integer> tmp = list.returnNode(0);
+		GenericNode<T> tmp = list.returnNode(0);
 		while (tmp != null){
 			System.out.println(tmp.getData());
 			//System.out.println(tmp.get_Dato());

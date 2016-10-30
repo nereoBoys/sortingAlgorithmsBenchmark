@@ -13,11 +13,11 @@ package sortingalgorithmsbenchmark;
 import Structures.GenericNode;
 import Structures.SimpleList;
 
-public class ShellSort {
+public class ShellSort <T extends Comparable>{
     
-    SimpleList<Integer> list;
+    SimpleList<T> list;
     
-    public ShellSort(SimpleList<Integer> pDato){
+    public ShellSort(SimpleList<T> pDato){
         list=pDato;
         _ShellSort();
     }
@@ -26,12 +26,12 @@ public class ShellSort {
      * Metodo encargado de ordenar la lista mediante ShellSort
      * @return un lista simple ordenada
      */
-    public SimpleList<Integer>_ShellSort(){
+    public SimpleList<T>_ShellSort(){
         
-        GenericNode<Integer> tmp=list.getHead();
-        GenericNode<Integer> tmp2=list.getHead();
-        GenericNode<Integer> tmp3=list.getHead();
-        GenericNode<Integer> tmp4=list.getHead();
+        GenericNode<T> tmp=list.getHead();
+        GenericNode<T> tmp2=list.getHead();
+        GenericNode<T> tmp3=list.getHead();
+        GenericNode<T> tmp4=list.getHead();
         
         int gap=(list.size())/2;
         
@@ -49,7 +49,7 @@ public class ShellSort {
             }else{
                 
                 if (cont==0){
-                    if(list.returnNode(cont).getData()>list.returnNode(cont+gap).getData()&&
+                    if(list.returnNode(cont).getData().compareTo(list.returnNode(cont+gap).getData())==-1&&
                            (cont+gap)-cont==1){
                         /*System.out.println("QQQQQ");
                         System.out.println(list.returnNode(i).getData());
@@ -62,7 +62,7 @@ public class ShellSort {
                         cont+=1;
                     
                     }
-                    else if(list.returnNode(cont).getData()>list.returnNode(cont+gap).getData() 
+                    else if(list.returnNode(cont).getData().compareTo(list.returnNode(cont+gap).getData())==-1 
                         && (cont+gap)-cont>2){
                         /*System.out.println("QQQQQ");
                         System.out.println(list.returnNode(cont).getData());
@@ -88,7 +88,7 @@ public class ShellSort {
                         list.print();*/
                         //System.out.println("DDD");
                     }
-                else if(list.returnNode(cont).getData()>list.returnNode(cont+gap).getData()
+                else if(list.returnNode(cont).getData().compareTo(list.returnNode(cont+gap).getData())==-1
                         && (cont+gap)-cont==2){
                             tmp=list.returnNode(cont+gap);
                             tmp2=list.returnNode((cont+gap)-1);
@@ -103,7 +103,7 @@ public class ShellSort {
                     cont+=1;
                 }
             }else{
-                    if(list.returnNode(cont).getData()>list.returnNode(cont+gap).getData()
+                    if(list.returnNode(cont).getData().compareTo(list.returnNode(cont+gap).getData())==-1
                             && (cont+gap)-cont==1 ){
                             /*System.out.println("CCCC");    
                             System.out.println(list.returnNode(cont).getData());
@@ -120,7 +120,7 @@ public class ShellSort {
                            /* System.out.println("list");
                             list.print();*/
                             
-                        }else if(list.returnNode(cont).getData()>list.returnNode(cont+gap).getData()
+                        }else if(list.returnNode(cont).getData().compareTo(list.returnNode(cont+gap).getData())==-1
                                 && (cont+gap)-cont>=2 ){
                             //System.out.println(gap);
                            /* System.out.println("WWWWWW");
@@ -154,7 +154,7 @@ public class ShellSort {
      * Metodo que muestra como se encuentra conformada la lista
      */
     public void print() {
-		GenericNode<Integer> tmp = list.returnNode(0);
+		GenericNode<T> tmp = list.returnNode(0);
 		while (tmp != null){
 			System.out.println(tmp.getData());
 			//System.out.println(tmp.get_Dato());
