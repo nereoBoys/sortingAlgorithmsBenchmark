@@ -45,20 +45,21 @@ public class QuickSort <T extends Comparable> {
         int bandera=1;// variable que indica de donde hacia donde continua la comparacion
         
         while(i!=j){
-            System.out.println("iguales");
-            System.out.println(i==j);
+            //System.out.println("iguales");
+            //System.out.println(i==j);
             
             if(bandera==1){
-                System.out.println("11111111");
+                /*System.out.println("11111111");
                             System.out.println(pivot.getData());
                             System.out.println(list.returnNode(i).getData());
                             System.out.println(list.returnNode(j).getData());
                             System.out.println(i);
                             System.out.println(j);
                             System.out.println(list.find_pos(pivot.getData()));
+                */
                 if(list.returnNode(j).getData().compareTo(pivot.getData())==-1
                                 && j-list.find_pos(pivot.getData())==1 && pivot==list.getHead()){
-                            System.out.println("IOIo");
+                            //System.out.println("IOIo");
                             
                         tmp=list.returnNode(j);
                         pivot.setNext(tmp.getNext());
@@ -69,7 +70,7 @@ public class QuickSort <T extends Comparable> {
                         
                 }else if(list.returnNode(j).getData().compareTo(pivot.getData())==-1 && 
                         j-list.find_pos(pivot.getData())>=2 && pivot==list.getHead()){
-                            System.out.println("77777");
+                            //System.out.println("77777");
                             tmp=list.returnNode(list.find_pos(pivot.getData()));
                             tmp2=list.returnNode(j);
                             tmp3=list.returnNode(j-1);
@@ -83,7 +84,7 @@ public class QuickSort <T extends Comparable> {
                             
                 }else if(list.returnNode(j).getData().compareTo(pivot.getData())==-1
                                 && j-list.find_pos(pivot.getData())==1){
-                            System.out.println("IOIO");
+                            //System.out.println("IOIO");
                             tmp=pivot;
                             tmp2=list.returnNode(j);
                             tmp3=list.returnNode(list.find_pos(pivot.getData())-1);
@@ -97,7 +98,7 @@ public class QuickSort <T extends Comparable> {
                             
                 }else if(list.returnNode(j).getData().compareTo(pivot.getData())==-1 
                                 && j-list.find_pos(pivot.getData())>=2 ){
-                            System.out.println("IxIx");
+                            //System.out.println("IxIx");
                             tmp=pivot;
                             tmp2=list.returnNode(list.find_pos(pivot.getData())-1);
                             tmp3=list.returnNode(j);
@@ -140,12 +141,12 @@ public class QuickSort <T extends Comparable> {
                             i+=1;
                             bandera=0;*/
                         }else{
-                            System.out.println("IMIM");
+                            //System.out.println("IMIM");
                             j-=1;
                         }
                     
         }else if(bandera==0){
-                System.out.println("2222222");
+                /*System.out.println("2222222");
                 System.out.println(pivot.getData());
                 System.out.println(list.getHead().getData());
                 System.out.println(i);
@@ -154,10 +155,10 @@ public class QuickSort <T extends Comparable> {
                 System.out.println(list.returnNode(i).getData());
                 System.out.println(list.returnNode(j).getData());
                 System.out.println(i-list.find_pos(pivot.getData()));
-                            
+                            */
                         if(list.returnNode(i).getData().compareTo(pivot.getData())==1 
                                 && list.find_pos(pivot.getData())-1==1 ){
-                            System.out.println("ZZZZ");
+                           // System.out.println("ZZZZ");
                             tmp=pivot;
                             tmp2=list.returnNode(i);
                             tmp3=list.returnNode(i-1);
@@ -170,7 +171,7 @@ public class QuickSort <T extends Comparable> {
                             
                         }else if(list.returnNode(i).getData().compareTo(pivot.getData())==1 
                                 && list.find_pos(pivot.getData())-1>=2 ){
-                            System.out.println("LLL");
+                            //System.out.println("LLL");
                             tmp=pivot;
                             tmp2=list.returnNode(list.find_pos(pivot.getData())-1);
                             tmp3=list.returnNode(i);
@@ -212,7 +213,7 @@ public class QuickSort <T extends Comparable> {
                             j-=1;
                             bandera=1;*/
                         }else{
-                            System.out.println("WWWW");
+                            //System.out.println("WWWW");
                             i+=1;
                         }
                     

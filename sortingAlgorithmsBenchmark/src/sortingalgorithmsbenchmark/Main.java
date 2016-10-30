@@ -32,8 +32,8 @@ public class Main {
         l.insert(8, 4);
         l.insert(3, 5);
         l.insert(14, 6);
-        l.insert(500, 7);
-        l.insert(424, 8);
+        l.insert(15, 7);
+        l.insert(16, 8);
         l.insert(5643, 9);
         l.insert(7654, 10);
         l.insert(4232, 11);
@@ -42,7 +42,7 @@ public class Main {
         l.insert(7276, 0);
         l.insert(1290, 1);
         l.insert(38, 2);
-        l.insert(36, 3);
+        l.insert(38, 3);
         l.insert(98, 4);
         l.insert(27, 5);
         l.insert(5649, 6);
